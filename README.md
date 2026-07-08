@@ -1,16 +1,43 @@
 # SOC Analyst Playbook
 
-> A hands-on cybersecurity portfolio documenting practical malware analysis, vulnerability assessments, network investigations, detection engineering, and web application security using industry-standard tools in a controlled laboratory environment.
+A hands-on cybersecurity portfolio documenting practical malware analysis, network investigations, vulnerability assessments, detection engineering, endpoint security, and web application security using industry-standard tools in a controlled laboratory environment.
 
 ---
 
-# About This Repository
+## About This Repository
 
-This repository documents my practical learning journey toward becoming a **Security Operations Center (SOC) Analyst**.
+This repository showcases my hands-on learning journey toward becoming a **Security Operations Center (SOC) Analyst**.
 
-Each lab focuses on solving real-world cybersecurity scenarios using widely adopted security tools rather than only explaining theoretical concepts. Every exercise is documented with objectives, methodology, analysis, observations, MITRE ATT&CK mappings, defensive recommendations, and key takeaways to reinforce practical Blue Team skills.
+The labs are designed to simulate real-world security investigations and defensive workflows using widely adopted cybersecurity tools. Rather than focusing only on theory, each exercise emphasizes practical analysis, documentation, and defensive thinking.
 
-The primary goal of this repository is to build a strong foundation in malware analysis, network security, vulnerability management, detection engineering, incident investigation, and web application security through hands-on experimentation.
+Every lab includes:
+
+- Objectives
+- Lab Environment
+- Methodology
+- Step-by-Step Procedure
+- Analysis & Findings
+- Indicators of Compromise (IOCs)
+- MITRE ATT&CK Mapping (where applicable)
+- Defensive Recommendations
+- Key Takeaways
+
+The goal of this repository is to strengthen practical Blue Team skills through structured, repeatable security investigations performed in an isolated laboratory environment.
+
+---
+
+# Repository Highlights
+
+- **15 Hands-on Security Labs**
+- **10+ Industry Security Tools**
+- **Malware Analysis & Reverse Engineering**
+- **Network Traffic Investigation**
+- **Detection Engineering**
+- **Vulnerability Assessment**
+- **Web Application Security Testing**
+- **Endpoint Security**
+- **MITRE ATT&CK Mapping**
+- **Professional Investigation Documentation**
 
 ---
 
@@ -21,7 +48,7 @@ The primary goal of this repository is to build a strong foundation in malware a
 These labs focus on identifying malicious indicators, analyzing Windows executables, reverse engineering binaries, and understanding malware behavior through static analysis.
 
 | Lab | Topic | Tools |
-|------|------|------|
+|-----|------|------|
 | Lab 01 | Static Malware Signature Detection | YARA |
 | Lab 02 | Windows PE Malware Classification | YARA |
 | Lab 03 | Static Malware Analysis | Radare2 |
@@ -34,7 +61,7 @@ These labs focus on identifying malicious indicators, analyzing Windows executab
 These exercises demonstrate host security hardening, vulnerability assessment, password auditing, network enumeration, and controlled vulnerability validation.
 
 | Lab | Topic | Tools |
-|------|------|------|
+|-----|------|------|
 | Lab 05 | SSH Brute Force Protection | Fail2Ban |
 | Lab 08 | Vulnerability Assessment | Nessus Essentials |
 | Lab 10 | Internal Network Security Assessment | Nmap |
@@ -45,10 +72,10 @@ These exercises demonstrate host security hardening, vulnerability assessment, p
 
 ## Network Security, Traffic Analysis & Detection Engineering
 
-These labs focus on monitoring network traffic, identifying malicious communications, analyzing Indicators of Compromise (IOCs), intrusion detection, and network attack detection.
+These labs focus on analyzing network traffic, identifying malicious communications, investigating Indicators of Compromise (IOCs), and building detection capabilities.
 
 | Lab | Topic | Tools |
-|------|------|------|
+|-----|------|------|
 | Lab 06 | Command & Control (C2) Traffic Analysis | Wireshark |
 | Lab 07 | Malware Traffic Detection | Snort IDS |
 | Lab 09 | Network Traffic Investigation & Data Exposure Analysis | Wireshark |
@@ -58,10 +85,10 @@ These labs focus on monitoring network traffic, identifying malicious communicat
 
 ## Web Application Security
 
-These labs demonstrate practical web application security testing using vulnerable applications to identify common security flaws and recommend defensive controls.
+These labs demonstrate practical web application security testing against intentionally vulnerable applications to identify common security flaws and recommend defensive controls.
 
 | Lab | Topic | Tools |
-|------|------|------|
+|-----|------|------|
 | Lab 12 | SQL Injection Security Assessment | Burp Suite |
 | Lab 13 | Cross-Site Scripting (XSS) & Cross-Site Request Forgery (CSRF) Assessment | Burp Suite |
 
@@ -69,71 +96,65 @@ These labs demonstrate practical web application security testing using vulnerab
 
 # Tools & Technologies
 
-### Malware Analysis
+## Malware Analysis
 
 - YARA
 - Radare2
 - Ghidra
 
-### Network Security
+### Skills
+
+- Malware Analysis
+- Static Malware Analysis
+- Windows PE Analysis
+- Malware Classification
+- Reverse Engineering
+- Windows API Analysis
+- Signature Development
+
+---
+
+## Network Security
 
 - Wireshark
 - Snort IDS
 - HPing3
 - Nmap
 
-### Vulnerability Assessment
+### Skills
+
+- Packet Capture & Analysis
+- Network Enumeration
+- Traffic Investigation
+- Command & Control (C2) Analysis
+- Network Forensics
+- Intrusion Detection
+- Detection Engineering
+
+---
+
+## Vulnerability Management
 
 - Nessus Essentials
 - Metasploit Framework
 
-### Web Application Security
+### Skills
+
+- Vulnerability Assessment
+- Vulnerability Validation
+- Security Risk Analysis
+- Risk Prioritization
+- Security Recommendations
+
+---
+
+## Web Application Security
 
 - Burp Suite
 - OWASP Mutillidae
 - DVWA
 
-### Endpoint Security
-
-- Fail2Ban
-- Hydra
-
-### Operating Systems
-
-- Kali Linux
-- Ubuntu Linux
-- Metasploitable 2
-
----
-
-# Skills Demonstrated
-
-### Malware Analysis
-
-- Static Malware Analysis
-- Windows PE Analysis
-- Malware Classification
-- Reverse Engineering
-- Windows API Analysis
-- Malware Signature Development
-
-### Network Security
-
-- Network Enumeration
-- Packet Capture & Analysis
-- Network Traffic Investigation
-- Command & Control (C2) Analysis
-- Network Forensics
-
-### Vulnerability Management
-
-- Vulnerability Assessment
-- Vulnerability Validation
-- Security Risk Analysis
-- Vulnerability Prioritization
-- Security Recommendations
-
-### Web Application Security
+### Skills
 
 - SQL Injection Testing
 - Cross-Site Scripting (XSS)
@@ -141,16 +162,14 @@ These labs demonstrate practical web application security testing using vulnerab
 - HTTP Request Analysis
 - Secure Web Application Testing
 
-### Detection Engineering
+---
 
-- Intrusion Detection
-- Snort Rule Development
-- Signature-Based Detection
-- IOC Analysis
-- Threat Detection
-- Security Monitoring
+## Endpoint Security
 
-### Endpoint Security
+- Fail2Ban
+- Hydra
+
+### Skills
 
 - Password Strength Assessment
 - Authentication Security
@@ -160,9 +179,82 @@ These labs demonstrate practical web application security testing using vulnerab
 
 ---
 
+## Operating Systems
+
+- Kali Linux
+- Ubuntu Linux
+- Metasploitable 2
+
+---
+
+# Skills Demonstrated
+
+## Security Operations
+
+- Incident Investigation
+- Security Monitoring
+- IOC Analysis
+- Detection Engineering
+- Defensive Security Analysis
+- Technical Documentation
+
+## Malware Analysis
+
+- Static Malware Analysis
+- Malware Classification
+- Reverse Engineering
+- Windows PE Analysis
+- Signature Development
+
+## Network Security
+
+- Packet Analysis
+- Network Traffic Investigation
+- Network Enumeration
+- Intrusion Detection
+- Network Forensics
+
+## Vulnerability Management
+
+- Vulnerability Assessment
+- Vulnerability Validation
+- Risk Analysis
+- Security Hardening
+
+## Web Security
+
+- SQL Injection
+- Cross-Site Scripting (XSS)
+- Cross-Site Request Forgery (CSRF)
+- HTTP Security Analysis
+
+## Endpoint Security
+
+- Password Auditing
+- SSH Hardening
+- Authentication Security
+- Brute Force Protection
+
+---
+
+# SOC Skills Mapping
+
+| SOC Responsibility | Demonstrated In |
+|---------------------------|--------------------------------------------|
+| Malware Investigation | Labs 01–04 |
+| Network Traffic Analysis | Labs 06, 09, 15 |
+| Vulnerability Assessment | Labs 08, 10, 11 |
+| Detection Engineering | Labs 01, 02, 07, 15 |
+| Web Application Security | Labs 12, 13 |
+| Endpoint Security | Labs 05, 14 |
+| Incident Investigation | Multiple Labs |
+| MITRE ATT&CK Mapping | Multiple Labs |
+
+---
+
 # MITRE ATT&CK Coverage
 
-The documented labs demonstrate techniques and defensive analysis related to multiple phases of the MITRE ATT&CK framework, including:
+The documented investigations demonstrate techniques and defensive analysis related to multiple stages of the MITRE ATT&CK framework, including:
 
 - Initial Access
 - Execution
@@ -177,7 +269,7 @@ The documented labs demonstrate techniques and defensive analysis related to mul
 
 # Repository Structure
 
-```text
+```
 Cybersecurity-Lab-Execution/
 │
 ├── lab01-yara-signature-detection
@@ -201,32 +293,47 @@ Cybersecurity-Lab-Execution/
 
 # Learning Outcomes
 
-Through these practical labs, I gained hands-on experience with:
+Through these practical investigations, I gained hands-on experience in:
 
 - Malware analysis and reverse engineering
 - Malware signature development using YARA
-- Static analysis of Windows PE executables
-- Command and Control (C2) traffic analysis
-- Network packet inspection using Wireshark
-- Vulnerability assessment with Nessus
+- Windows PE executable analysis
+- Command & Control (C2) traffic investigation
+- Packet capture and network traffic analysis using Wireshark
+- Vulnerability assessment with Nessus Essentials
 - Internal network enumeration using Nmap
-- Controlled vulnerability validation with Metasploit
-- SQL Injection assessment
+- Controlled vulnerability validation using Metasploit
+- SQL Injection testing
 - Cross-Site Scripting (XSS) analysis
 - Cross-Site Request Forgery (CSRF) assessment
-- Password strength auditing using Hydra
+- Password auditing using Hydra
 - SSH brute-force protection with Fail2Ban
 - Intrusion Detection System (IDS) deployment using Snort
 - Custom Snort rule development
-- Detection and analysis of Denial-of-Service (DoS) attacks
+- Detection and investigation of Denial-of-Service (DoS) attacks
 - Security monitoring and incident investigation
+- Mapping security findings to the MITRE ATT&CK framework
+- Documenting investigations using professional security reporting practices
+
+---
+
+# Future Learning Roadmap
+
+This repository will continue to evolve as I expand my practical Blue Team skillset. Planned additions include:
+
+- Windows Sysmon Log Analysis
+- Wazuh SIEM Home Lab
+- Splunk Security Monitoring
+- Sigma Rule Development
+- Advanced Threat Hunting
+- Active Directory Security Labs
+- Incident Response Playbooks
+- Detection Engineering Scenarios
 
 ---
 
 # Disclaimer
 
-All activities documented in this repository were performed exclusively within isolated laboratory environments using virtual machines and intentionally vulnerable applications. The techniques demonstrated are intended solely for cybersecurity education, research, and authorized defensive security testing. No unauthorized systems or production environments were targeted.
+All activities documented in this repository were performed exclusively within isolated laboratory environments using virtual machines and intentionally vulnerable applications.
 
----
-
-⭐ If you find this repository useful, consider giving it a star.
+The techniques demonstrated are intended solely for cybersecurity education, research, and authorized defensive security testing. No unauthorized systems or production environments were targeted.
