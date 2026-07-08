@@ -1,0 +1,249 @@
+# Lab 9 – Network Traffic Investigation for Unauthorized Data Exposure Using Wireshark
+
+## Overview
+
+This lab demonstrates how **Wireshark** can be used to investigate suspected unauthorized data exposure by analyzing captured network traffic between a client and a web application.
+
+A controlled lab environment consisting of Kali Linux and Metasploitable 2 running the Mutillidae vulnerable web application was used to simulate user authentication. Network packets were captured during the login process and analyzed to determine whether sensitive information such as usernames and passwords was transmitted insecurely.
+
+This exercise highlights the importance of packet analysis during incident response and demonstrates how insecure protocols can expose sensitive information over a network.
+
+---
+
+# Objectives
+
+- Capture network traffic using Wireshark.
+- Analyze HTTP communication between client and server.
+- Inspect HTTP POST requests.
+- Identify sensitive information transmitted in plaintext.
+- Understand the risks of unencrypted protocols.
+- Perform basic network forensic analysis.
+
+---
+
+# Background
+
+Network traffic analysis is an essential component of digital forensics and incident response.
+
+When an organization suspects unauthorized data leakage, analysts examine captured network traffic to determine:
+
+- What information was transmitted
+- Which hosts communicated
+- Which protocols were used
+- Whether sensitive information was exposed
+- Whether malicious communication occurred
+
+Wireshark provides deep packet inspection capabilities that allow analysts to reconstruct network conversations and examine application-layer data without modifying the original traffic.
+
+---
+
+# Lab Environment
+
+| Component | Details |
+|-----------|---------|
+| Analysis Machine | Kali Linux |
+| Target Machine | Metasploitable 2 |
+| Web Application | Mutillidae |
+| Network Analyzer | Wireshark |
+| Protocol | HTTP |
+
+---
+
+# Tools Used
+
+- Wireshark
+- Kali Linux
+- Metasploitable 2
+- Mutillidae Web Application
+- Linux Terminal
+
+---
+
+# Investigation Scenario
+
+A development server is suspected of exposing sensitive authentication information due to an insecure web application configuration.
+
+To verify this, network traffic between the client and server is captured while a user attempts to authenticate to the web application.
+
+The objective is to determine whether login credentials are transmitted securely.
+
+---
+
+# Capturing Network Traffic
+
+Launch Wireshark and select the active network interface.
+
+Start packet capture before interacting with the target web application.
+
+Navigate to the Mutillidae login page and attempt authentication using test credentials.
+
+After generating the traffic, stop the packet capture for analysis.
+
+---
+
+# Traffic Analysis
+
+Apply the HTTP display filter:
+
+```text
+http
+```
+
+Locate the HTTP POST request generated during the login attempt.
+
+Follow the HTTP stream:
+
+```
+Right Click
+→ Follow
+→ HTTP Stream
+```
+
+This reconstructs the complete client-server conversation.
+
+---
+
+# Observed Network Activity
+
+Analysis of the HTTP stream revealed:
+
+- HTTP POST request
+- Client username
+- Submitted password
+- Request headers
+- Response from the web server
+
+Because HTTP does not encrypt application data, the submitted credentials were visible in plaintext.
+
+---
+
+# Indicators Observed
+
+The packet capture contained the following information:
+
+| Indicator | Observation |
+|-----------|-------------|
+| Protocol | HTTP |
+| Request Type | POST |
+| Authentication Request | Login Submission |
+| Username | Visible |
+| Password | Visible |
+| Encryption | None |
+
+---
+
+# Analysis & Observations
+
+The packet capture confirmed that user credentials were transmitted over an unencrypted HTTP connection.
+
+The absence of transport-layer encryption allowed sensitive information to be viewed directly from captured packets.
+
+Although this exercise was performed in a controlled laboratory environment, similar configurations in production systems could expose user credentials to attackers capable of intercepting network traffic.
+
+This demonstrates why secure protocols such as HTTPS are essential for protecting authentication data.
+
+---
+
+# Incident Summary
+
+| Field | Observation |
+|--------|-------------|
+| Alert Type | Potential Credential Exposure |
+| Protocol | HTTP |
+| Risk Level | High |
+| Data Exposed | Username and Password |
+| Root Cause | Plaintext HTTP Communication |
+| Recommended Action | Enforce HTTPS and TLS Encryption |
+
+---
+
+# SOC Analyst Perspective
+
+Credential exposure over unencrypted protocols is a common finding during network investigations.
+
+SOC analysts routinely inspect packet captures to determine whether:
+
+- Sensitive credentials were transmitted
+- Authentication requests were encrypted
+- Unauthorized systems intercepted communications
+- Web applications follow secure communication practices
+
+Network traffic analysis also assists analysts in validating alerts generated by IDS, SIEM platforms, and endpoint security tools.
+
+Understanding protocol behavior enables defenders to quickly identify insecure services and recommend appropriate remediation.
+
+---
+
+# MITRE ATT&CK Context
+
+The observed behavior relates to techniques involving credential access and network communication.
+
+| ATT&CK Tactic | Technique | Description |
+|--------------|-----------|-------------|
+| Credential Access | T1557 | Adversary-in-the-Middle |
+| Credential Access | T1040 | Network Sniffing |
+| Collection | T1005 | Data from Local System (Potential Credential Collection) |
+
+> **Note:** This lab demonstrates defensive traffic analysis. The ATT&CK mappings represent techniques that attackers could leverage when credentials are transmitted over unencrypted channels.
+
+---
+
+# Detection Opportunities
+
+Security teams can identify similar issues using:
+
+- Wireshark
+- Zeek
+- Suricata
+- Snort
+- Network Detection and Response (NDR)
+- SIEM platforms
+- Firewall logs
+- Proxy logs
+
+Indicators include:
+
+- HTTP authentication traffic
+- Plaintext credentials
+- Unencrypted POST requests
+- Sensitive parameters in URLs or request bodies
+- Communication over insecure protocols
+
+---
+
+# Defensive Recommendations
+
+- Enforce HTTPS across all web applications.
+- Disable insecure HTTP access.
+- Implement TLS 1.2 or higher.
+- Use secure session management.
+- Enable HTTP Strict Transport Security (HSTS).
+- Monitor for plaintext credential transmission.
+- Perform regular network traffic audits.
+
+---
+
+# Key Takeaways
+
+- Captured live network traffic using Wireshark.
+- Analyzed HTTP POST requests.
+- Identified plaintext credential transmission.
+- Investigated potential data exposure.
+- Understood the importance of encrypted communication.
+- Gained practical experience in network traffic analysis and incident investigation.
+
+---
+
+# References
+
+- Wireshark Official Documentation
+- OWASP Transport Layer Security Cheat Sheet
+- MITRE ATT&CK Framework
+- NIST SP 800-61 – Computer Security Incident Handling Guide
+- OWASP Top 10 – Cryptographic Failures
+
+---
+
+# Disclaimer
+
+This investigation was conducted within an isolated laboratory environment using intentionally vulnerable systems for educational and defensive cybersecurity purposes. All captured network traffic originated from authorized test systems.
