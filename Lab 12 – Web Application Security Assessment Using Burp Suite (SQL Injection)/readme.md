@@ -1,0 +1,260 @@
+# Lab 12 – Web Application Security Assessment Using Burp Suite (SQL Injection)
+
+## Overview
+
+This lab demonstrates the use of **Burp Suite Community Edition** to assess a deliberately vulnerable web application for SQL Injection vulnerabilities. The assessment combines manual input validation testing with HTTP request interception to identify authentication bypass flaws and insecure server-side input handling.
+
+A controlled laboratory environment consisting of Kali Linux and Metasploitable 2 running the OWASP Mutillidae application was used to simulate common web application security testing scenarios.
+
+The objective was to identify SQL Injection vulnerabilities, observe how malicious input affects backend SQL queries, and analyze HTTP requests intercepted through Burp Suite.
+
+---
+
+# Objectives
+
+- Configure Burp Suite as an intercepting proxy.
+- Perform manual SQL Injection testing.
+- Capture HTTP requests and responses.
+- Modify intercepted requests.
+- Observe authentication bypass.
+- Understand secure input validation practices.
+
+---
+
+# Background
+
+SQL Injection (SQLi) is one of the most common web application vulnerabilities and is included in the **OWASP Top 10**.
+
+It occurs when user-supplied input is incorporated directly into SQL queries without proper validation or parameterization.
+
+Successful SQL Injection attacks may allow an attacker to:
+
+- Bypass authentication
+- Retrieve sensitive database records
+- Modify stored data
+- Delete database contents
+- Execute administrative operations
+
+Burp Suite enables analysts to inspect, intercept, and modify HTTP requests, making it an essential tool for web application security testing.
+
+---
+
+# Lab Environment
+
+| Component | Details |
+|-----------|---------|
+| Testing Machine | Kali Linux |
+| Target Machine | Metasploitable 2 |
+| Vulnerable Application | OWASP Mutillidae |
+| Proxy Tool | Burp Suite Community Edition |
+| Protocol | HTTP |
+
+---
+
+# Tools Used
+
+- Burp Suite Community Edition
+- Firefox Browser
+- Kali Linux
+- Metasploitable 2
+- OWASP Mutillidae
+
+---
+
+# Burp Suite Configuration
+
+Burp Suite was configured as an intercepting proxy.
+
+Default listener configuration:
+
+```
+127.0.0.1:8080
+```
+
+Firefox was configured to use the same proxy settings.
+
+The Burp CA certificate was imported into Firefox to enable HTTPS interception where required. :contentReference[oaicite:2]{index=2}
+
+---
+
+# Manual SQL Injection Testing
+
+The Mutillidae application was configured for SQL Injection testing.
+
+The authentication form was tested using multiple SQL Injection payloads to observe application behavior.
+
+Examples included:
+
+- Invalid input to trigger SQL errors.
+- Authentication bypass payloads.
+- Boolean-based SQL conditions.
+
+The application displayed SQL errors and accepted specially crafted input, indicating insufficient server-side validation. :contentReference[oaicite:3]{index=3}
+
+---
+
+# Authentication Bypass
+
+Testing demonstrated that improperly validated input could bypass authentication controls.
+
+Observed behavior:
+
+- Login page accepted manipulated input.
+- Backend query logic was altered.
+- Administrative access was granted.
+- Additional database records became accessible.
+
+This confirms the presence of an SQL Injection vulnerability in the intentionally vulnerable application.
+
+---
+
+# HTTP Request Interception
+
+Burp Suite Proxy intercepted the login request before it reached the web server.
+
+Captured information included:
+
+- HTTP Method
+- Target URL
+- Request Headers
+- Cookies
+- POST Parameters
+- Authentication Credentials
+
+Intercepting requests allows security analysts to inspect exactly what is transmitted between client and server.
+
+---
+
+# Request Modification
+
+Captured requests were modified before forwarding them to the server.
+
+Examples included:
+
+- Changing submitted usernames.
+- Modifying password parameters.
+- Altering request body values.
+- Resending manipulated requests.
+
+This demonstrates how insecure server-side validation can allow modified requests to bypass application controls. :contentReference[oaicite:4]{index=4}
+
+---
+
+# Analysis & Observations
+
+The assessment identified multiple indicators of improper input validation.
+
+Observed findings included:
+
+- SQL error messages returned by the application.
+- Authentication bypass.
+- Database record disclosure.
+- Successful request manipulation.
+- Lack of parameterized query handling.
+
+These behaviors indicate that user input is processed without sufficient sanitization or validation.
+
+---
+
+# Security Findings
+
+| Finding | Risk |
+|----------|------|
+| SQL Injection | Critical |
+| Authentication Bypass | High |
+| Information Disclosure | High |
+| Improper Input Validation | High |
+| Plain HTTP Communication | Medium |
+
+---
+
+# SOC Analyst Perspective
+
+Although SQL Injection is commonly associated with penetration testing, SOC analysts frequently investigate alerts generated by Web Application Firewalls (WAFs), Intrusion Detection Systems (IDS), and SIEM platforms involving SQL Injection attempts.
+
+Understanding HTTP requests and common SQL Injection payloads enables analysts to:
+
+- Investigate web attack alerts.
+- Identify malicious request patterns.
+- Correlate application logs.
+- Support incident response.
+- Validate web application security findings.
+
+Knowledge of Burp Suite also helps analysts reproduce suspicious requests during investigations.
+
+---
+
+# MITRE ATT&CK Context
+
+The demonstrated behavior aligns with several ATT&CK techniques related to exploiting vulnerable web applications.
+
+| ATT&CK Tactic | Technique | Description |
+|--------------|-----------|-------------|
+| Initial Access | T1190 | Exploit Public-Facing Application |
+| Credential Access | T1110 | Brute Force / Authentication Abuse (related behavior) |
+| Collection | T1213 | Data from Information Repositories |
+| Discovery | T1087 | Account Discovery (possible post-authentication activity) |
+
+> **Note:** This assessment was conducted against an intentionally vulnerable application within a controlled laboratory environment.
+
+---
+
+# Detection Opportunities
+
+Organizations can detect SQL Injection attempts using:
+
+- Web Application Firewall (WAF)
+- Burp Suite Logger
+- Web Server Logs
+- SIEM Correlation Rules
+- IDS/IPS
+- ModSecurity
+- Application Monitoring
+
+Common indicators include:
+
+- SQL keywords in HTTP requests.
+- Authentication bypass attempts.
+- Unexpected SQL errors.
+- Abnormal POST parameters.
+- Repeated failed login attempts.
+- Suspicious query strings.
+
+---
+
+# Defensive Recommendations
+
+- Use parameterized SQL queries.
+- Implement prepared statements.
+- Validate and sanitize all user input.
+- Deploy a Web Application Firewall.
+- Disable verbose database error messages.
+- Apply least privilege to database accounts.
+- Perform regular security testing.
+
+---
+
+# Key Takeaways
+
+- Configured Burp Suite as an intercepting proxy.
+- Performed manual SQL Injection testing.
+- Intercepted and modified HTTP requests.
+- Identified authentication bypass vulnerabilities.
+- Analyzed insecure input validation.
+- Understood secure web application testing practices.
+
+---
+
+# References
+
+- OWASP SQL Injection Prevention Cheat Sheet
+- Burp Suite Documentation
+- OWASP Top 10
+- MITRE ATT&CK Framework
+- PortSwigger Web Security Academy
+
+---
+
+# Disclaimer
+
+This assessment was performed exclusively within an isolated laboratory environment using the intentionally vulnerable OWASP Mutillidae application. All testing was conducted for educational and defensive cybersecurity purposes on authorized systems.
