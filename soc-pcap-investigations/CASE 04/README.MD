@@ -43,8 +43,8 @@ Filtering the capture with `arp` displayed **12 ARP packets**. The traffic invol
 
 **Evidence**
 
-![ARP traffic overview](./Screenshot_2026-08-28_20_08_31(1).png)
-*Screenshot_2026-08-28_20_08_31(1).png — overall ARP-filtered packet list showing multiple ARP requests and replies exchanged between hosts*
+![ARP traffic overview](./Screenshot_2026-08-28_20_08_31.png)
+*Screenshot_2026-08-28_20_08_31.png — overall ARP-filtered packet list showing multiple ARP requests and replies exchanged between hosts*
 
 ---
 
@@ -73,10 +73,10 @@ The following ARP response provided a mapping for the requested host:
 
 **Evidence**
 
-![ARP request for 192.168.1.2](./Screenshot_2026-08-28_20_08_57(1).png)
+![ARP request for 192.168.1.2](./Screenshot_2026-08-28_20_08_57.png)
 *Screenshot_2026-08-28_20_08_57(1).png — ARP request from MAC 50:00:33:33:33:33 asking "Who has 192.168.1.2? Tell 192.168.1.3"*
 
-![ARP reply for 192.168.1.2](./Screenshot_2026-08-28_20_09_10(1).png)
+![ARP reply for 192.168.1.2](./Screenshot_2026-08-28_20_09_10.png)
 *Screenshot_2026-08-28_20_09_10(1).png — ARP reply claiming 192.168.1.2 is at 50:00:22:22:22:22*
 
 ---
@@ -94,7 +94,7 @@ The same IP address was associated with two different MAC addresses during the c
 
 **Evidence**
 
-![First mapping for 192.168.1.1](./Screenshot_2026-08-28_20_09_42(1).png)
+![First mapping for 192.168.1.1](./Screenshot_2026-08-28_20_09_42.png)
 *Screenshot_2026-08-28_20_09_42(1).png — ARP reply claiming 192.168.1.1 is at 50:00:33:33:33:33, the first observed (later contradicted) mapping*
 
 ---
