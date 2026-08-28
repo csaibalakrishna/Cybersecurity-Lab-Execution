@@ -145,11 +145,11 @@ Wireshark again flagged the packet with a duplicate IP address warning. The repe
 
 **Evidence**
 
-![Duplicate IP address warning](./Screenshot_2026-08-28_20_09_57(1).png)
-*Screenshot_2026-08-28_20_09_57(1).png — Wireshark detecting a duplicate IP address for 192.168.1.1, now associated with MAC 50:00:11:11:11:11*
+![Duplicate IP address warning](./Screenshot_2026-08-28_20_09_57.png)
+*Screenshot_2026-08-28_20_09_57.png — Wireshark detecting a duplicate IP address for 192.168.1.1, now associated with MAC 50:00:11:11:11:11*
 
-![Repeated conflicting mapping](./Screenshot_2026-08-28_20_10_06(1).png)
-*Screenshot_2026-08-28_20_10_06(1).png — another ARP reply continuing the conflicting mapping of 192.168.1.1 to 50:00:11:11:11:11, reinforcing the ARP spoofing evidence*
+![Repeated conflicting mapping](./Screenshot_2026-08-28_20_10_06.png)
+*Screenshot_2026-08-28_20_10_06.png — another ARP reply continuing the conflicting mapping of 192.168.1.1 to 50:00:11:11:11:11, reinforcing the ARP spoofing evidence*
 
 ---
 
