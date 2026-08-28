@@ -74,10 +74,10 @@ The following ARP response provided a mapping for the requested host:
 **Evidence**
 
 ![ARP request for 192.168.1.2](./Screenshot_2026-08-28_20_08_57.png)
-*Screenshot_2026-08-28_20_08_57(1).png — ARP request from MAC 50:00:33:33:33:33 asking "Who has 192.168.1.2? Tell 192.168.1.3"*
+*Screenshot_2026-08-28_20_08_57.png — ARP request from MAC 50:00:33:33:33:33 asking "Who has 192.168.1.2? Tell 192.168.1.3"*
 
 ![ARP reply for 192.168.1.2](./Screenshot_2026-08-28_20_09_10.png)
-*Screenshot_2026-08-28_20_09_10(1).png — ARP reply claiming 192.168.1.2 is at 50:00:22:22:22:22*
+*Screenshot_2026-08-28_20_09_10.png — ARP reply claiming 192.168.1.2 is at 50:00:22:22:22:22*
 
 ---
 
