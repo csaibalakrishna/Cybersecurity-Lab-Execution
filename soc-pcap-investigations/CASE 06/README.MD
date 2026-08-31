@@ -47,7 +47,7 @@ The traffic was heavily dominated by communication involving `10.10.23.101 ↔ 1
 
 **Evidence**
 
-![Wireshark Endpoints statistics](./Screenshot_2026-08-31_19_41_36(1).png)
+![Wireshark Endpoints statistics](./Screenshot_2026-08-31_19_41_36.png)
 *Screenshot_2026-08-31_19_41_36(1).png — Wireshark Endpoints statistics showing the main communicating hosts and traffic volume*
 
 ---
@@ -64,7 +64,7 @@ A notable observation was that **XML represented approximately 5.58 MB of applic
 
 **Evidence**
 
-![Protocol Hierarchy statistics](./Screenshot_2026-08-31_19_41_43(1).png)
+![Protocol Hierarchy statistics](./Screenshot_2026-08-31_19_41_43.png)
 *Screenshot_2026-08-31_19_41_43(1).png — Wireshark Protocol Hierarchy Statistics showing that most captured traffic was TCP/XML*
 
 ---
@@ -93,8 +93,8 @@ This asymmetric communication pattern was notable — the internal host transmit
 
 **Evidence**
 
-![Wireshark Conversations statistics](./Screenshot_2026-08-31_19_41_54(1).png)
-*Screenshot_2026-08-31_19_41_54(1).png — Wireshark Conversations statistics showing the two main TCP conversations in the capture*
+![Wireshark Conversations statistics](./Screenshot_2026-08-31_19_41_54.png)
+*Screenshot_2026-08-31_19_41_54.png — Wireshark Conversations statistics showing the two main TCP conversations in the capture*
 
 ---
 
@@ -112,8 +112,8 @@ The communication generated 8,787 packets, approximately 6.05 MB of traffic, and
 
 **Evidence**
 
-![Filtered XML traffic — HTTP POST requests](./Screenshot_2026-08-31_19_42_45(1).png)
-*Screenshot_2026-08-31_19_42_45(1).png — filtered XML traffic showing HTTP POST requests and server responses*
+![Filtered XML traffic — HTTP POST requests](./Screenshot_2026-08-31_19_42_45.png)
+*Screenshot_2026-08-31_19_42_45.png — filtered XML traffic showing HTTP POST requests and server responses*
 
 ---
 
@@ -131,8 +131,8 @@ Inspection using Follow TCP Stream revealed SOAP/XML-formatted messages. Observe
 
 **Evidence**
 
-![Follow TCP Stream — reassembled XML data](./Screenshot_2026-08-31_19_33_47(1).png)
-*Screenshot_2026-08-31_19_33_47(1).png — Follow TCP Stream view showing the large reassembled client-server XML data stream*
+![Follow TCP Stream — reassembled XML data](./Screenshot_2026-08-31_19_33_47.png)
+*Screenshot_2026-08-31_19_33_47.png — Follow TCP Stream view showing the large reassembled client-server XML data stream*
 
 ---
 
@@ -157,8 +157,8 @@ However, the complete stream could not be manually reviewed to its end because o
 ![XML/SOAP POST packet detail](./Screenshot_2026-08-31_19_42_53.png)
 *Screenshot_2026-08-31_19_42_53.png — detailed inspection of the large XML/SOAP POST packet containing host information and transmitted data*
 
-![XML/SOAP CheckConnect request detail](./Screenshot_2026-08-31_19_28_28(2).png)
-*Screenshot_2026-08-31_19_28_28(2).png — detailed inspection of an XML/SOAP CheckConnect request between the internal host and external server*
+![XML/SOAP CheckConnect request detail](./Screenshot_2026-08-31_19_28_28.png)
+*Screenshot_2026-08-31_19_28_28.png — detailed inspection of an XML/SOAP CheckConnect request between the internal host and external server*
 
 ---
 
@@ -241,15 +241,13 @@ Additional endpoint telemetry, process information, file artifacts, or malware a
 
 | # | Screenshot | Content |
 |---|---|---|
-| 1 | `Screenshot_2026-08-31_19_41_36(1).png` | Wireshark Endpoints statistics |
-| 2 | `Screenshot_2026-08-31_19_41_43(1).png` | Protocol Hierarchy statistics |
-| 3 | `Screenshot_2026-08-31_19_41_54(1).png` | Conversations statistics |
-| 4 | `Screenshot_2026-08-31_19_42_45(1).png` | Filtered XML traffic — HTTP POST requests |
+| 1 | `Screenshot_2026-08-31_19_41_36.png` | Wireshark Endpoints statistics |
+| 2 | `Screenshot_2026-08-31_19_41_43.png` | Protocol Hierarchy statistics |
+| 3 | `Screenshot_2026-08-31_19_41_54.png` | Conversations statistics |
+| 4 | `Screenshot_2026-08-31_19_42_45.png` | Filtered XML traffic — HTTP POST requests |
 | 5 | `Screenshot_2026-08-31_19_42_53.png` | XML/SOAP POST packet detail |
-| 6 | `Screenshot_2026-08-31_19_33_47(1).png` | Follow TCP Stream — reassembled XML data |
-| 7 | `Screenshot_2026-08-31_19_28_28(2).png` | XML/SOAP CheckConnect request detail |
-
-> ⚠️ Filenames 1, 2, 3, 4, 6, and 7 contain parentheses (`(1)`, `(2)`). Rename these on disk before uploading — e.g. `Screenshot_2026-08-31_19_41_36.png`, `Screenshot_2026-08-31_19_28_28_2.png` — to avoid rendering issues, same flag as raised on Day 4.
+| 6 | `Screenshot_2026-08-31_19_33_47.png` | Follow TCP Stream — reassembled XML data |
+| 7 | `Screenshot_2026-08-31_19_28_28.png` | XML/SOAP CheckConnect request detail |
 
 ---
 
