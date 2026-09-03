@@ -50,8 +50,6 @@ Other observed addresses included broadcast and multicast traffic (`10.10.10.255
 
 The primary investigation therefore focused on communication between `10.10.10.80` and `10.10.10.50`.
 
-*(No screenshot provided for this section — endpoint statistics are documented as text evidence only.)*
-
 ---
 
 ## 2. SSH Traffic Identification
