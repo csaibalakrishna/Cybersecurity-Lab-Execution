@@ -74,8 +74,8 @@ tcp.port == 445
 
 **Evidence**
 
-![SMB/SMB2 traffic overview](./Screenshot_2026-09-03_19_06_26.png)
-*Screenshot_2026-09-03_19_06_26.png — SMB/SMB2 traffic between 192.168.199.133 and 192.168.199.132, including repeated NTLM authentication failures and successful SMB session activity*
+![SMB/SMB2 traffic overview](./Screenshot_2026-09-03_19_29_26.png)
+*Screenshot_2026-09-03_19_29_26.png — SMB/SMB2 traffic between 192.168.199.133 and 192.168.199.132, including repeated NTLM authentication failures and successful SMB session activity*
 
 ---
 
