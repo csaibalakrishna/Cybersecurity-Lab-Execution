@@ -197,7 +197,7 @@ The srvsvc interface and `NetShareEnumAll` activity indicate that the authentica
 
 **Evidence**
 
-![IPC$/srvsvc/RPC activity including NetShareEnumAll](./Screenshot_2026-09-04_19_22_11(1).png)
+![IPC$/srvsvc/RPC activity including NetShareEnumAll](./Screenshot_2026-09-04_19_22_11.png)
 *Screenshot_2026-09-04_19_22_11(1).png — SMB2 IPC$ access followed by srvsvc and SRVSVC RPC activity, including NetShareEnumAll*
 
 ---
@@ -362,7 +362,6 @@ The overall activity is consistent with suspicious SMB authentication followed b
 | 5 | `Screenshot_2026-09-04_19_22_11(1).png` | IPC$/srvsvc/RPC activity, NetShareEnumAll |
 | 6 | `Screenshot_2026-09-04_19_58_46.png` | SMB2 filename activity on srvsvc |
 
-> ⚠️ `Screenshot_2026-09-04_19_22_11(1).png` contains parentheses. Rename before upload — e.g. `Screenshot_2026-09-04_19_22_11.png` — same flag raised on Days 4 and 6.
 
 ---
 
