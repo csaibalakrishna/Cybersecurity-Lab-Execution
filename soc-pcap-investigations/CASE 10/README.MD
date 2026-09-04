@@ -132,8 +132,8 @@ The repeated authentication failures indicate repeated attempts to authenticate 
 
 **Evidence**
 
-![Repeated SMB2 Session Setup / NTLM failures](./Screenshot_2026-09-03_19_08_37.png)
-*Screenshot_2026-09-03_19_08_37.png — repeated SMB2 Session Setup and NTLM authentication exchanges, including multiple STATUS_LOGON_FAILURE responses*
+![Repeated SMB2 Session Setup / NTLM failures](./Screenshot_2026-09-03_19_56_32.png)
+*Screenshot_2026-09-03_19_56_32.png — repeated SMB2 Session Setup and NTLM authentication exchanges, including multiple STATUS_LOGON_FAILURE responses*
 
 ---
 
